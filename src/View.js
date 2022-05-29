@@ -11,6 +11,21 @@ const View = () => {
     
             }
         )
+        const deleteCallApi=(id)=>{
+          const data={"_id":id}
+          console.log(data)
+          axios.post("http://localhost:4500/api/deleterecipie",data).then(
+              (response)=>{
+              if(response.data.status=="success"){
+                  alert("Successfully deleted")
+          
+              }
+              else{
+                  alert("error in deletion")
+          
+              }
+          })
+          }
   return (
     <div>
         <div>
@@ -32,6 +47,7 @@ const View = () => {
                                <p class="card-text">Category:{value.catagory}</p>
                                <p class="card-text">Description:{value.discription}</p>
                                <p class="card-text">Prepared By:{value.pepared}</p>
+                               <button onClick={ ()=>{deleteCallApi(value._id)}} className='btn btn-danger'>Delete</button>
                           
                                 </div>
                        </div>
