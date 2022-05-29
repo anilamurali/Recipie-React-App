@@ -3,11 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Addrecipie from './Addrecipie';
+import View from './View';
 
 function App() {
   return (
     <>
-    <Addrecipie/>
+    <View/>
     </>
   );
 }
