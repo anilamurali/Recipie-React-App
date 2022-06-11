@@ -1,5 +1,6 @@
 {
   "name": "recpie-react-app",
+  "homepage": "https://ec2-3-111-239-84.ap-south-1.compute.amazonaws.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

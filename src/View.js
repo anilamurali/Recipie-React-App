@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Nav from './Nav'
 
 const View = () => {
     var [viewrecipie,setView]=useState([])
-        axios.get("http://localhost:4500/api/viewrecipie").then(
+        axios.get("http://3.111.239:4500:4500/api/viewrecipie").then(
             (response)=>{
                 console.log(response.data)
                 setView(response.data)
@@ -14,7 +15,7 @@ const View = () => {
         const deleteCallApi=(id)=>{
           const data={"_id":id}
           console.log(data)
-          axios.post("http://localhost:4500/api/deleterecipie",data).then(
+          axios.post("http://3.111.239:4500:4500/api/deleterecipie",data).then(
               (response)=>{
               if(response.data.status=="success"){
                   alert("Successfully deleted")
@@ -28,15 +29,17 @@ const View = () => {
           }
   return (
     <div>
+      <Nav/>
         <div>
         
         <div class="container">
     <div class="row ">
-        <div class="col-col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div className='row-3'>
             
                     {
                         viewrecipie.map((value,key)=>{
-                       return <div class='col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4'>
+                       return <div class='col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3'>
                        <div class='card'>
                            <img  src={value.image} class="card-image-top" alt=" " />
                            <div class="card-body">
@@ -54,7 +57,7 @@ const View = () => {
                    </div>
                         })}
                 
-                 
+                </div>
         </div>
     </div>
 </div>
