@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Nav from './Nav'
 
 const Search = () => {
     const [data,setData]=useState([{"cgpa":"","name":""}])
@@ -7,7 +8,7 @@ const Search = () => {
 const callSearch=()=>{
     const valueRead={"title":title}
     console.log(valueRead)
-    axios.post("http://localhost:4500/api/searchrecipie",valueRead).then(
+    axios.post("http://3.111.239:4500:4500/api/searchrecipie",valueRead).then(
         (response)=>{
         console.log(response.data)
         setData(response.data)
@@ -16,7 +17,9 @@ const callSearch=()=>{
 
 }
   return (
-    <div><div class="container">
+    <div>
+        <Nav/>
+        <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">

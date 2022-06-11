@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Nav from './Nav'
 
 const Addrecipie = () => {
     var [title,setTitle]=useState("")
@@ -10,7 +11,7 @@ const Addrecipie = () => {
     const setData=()=>{
     var data={"title":title,"catagory":cat,"discription":des,"pepared":prepare,"image":image}
     console.log(data)
-    axios.post("http://localhost:4500/api/addrecipie",data).then(
+    axios.post("http://3.111.239:4500/api/addrecipie",data).then(
             (response)=>{
                 console.log(response.data)
                 if(response.data.status=="success"){
@@ -24,7 +25,9 @@ const Addrecipie = () => {
         )
     }
   return (
-    <div><div class="container">
+    <div>
+        <Nav/>
+        <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
